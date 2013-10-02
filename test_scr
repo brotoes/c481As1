@@ -1,0 +1,21 @@
+echo "#total_time init_time gen_time mult_time nproc size"
+for (( cores=1; cores<=8; cores++)); do
+	for ((size=512; size<=4096; size*=2)); do
+		for (( run=0; run < 10; run ++)); do
+			echo $cores $size $run
+			if [[ "$cores" -eq 1 ]]; then
+				if [[ "$run" -gt 4 ]]; then
+					./seq $size >> output.dat
+				else
+					./seq $size >> tossed.dat
+				fi
+			else
+				if [[ "$run" -gt 4 ]]; then
+					./main $cores $size >> output.dat
+				else
+					./main $cores $size >> tossed.dat
+				fi
+			fi
+		done
+	done
+done
