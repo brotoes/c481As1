@@ -1,6 +1,43 @@
-\documentclass[12pt]{article}
-
+\documentclass[11pt]{article}
+\usepackage{listings}
+\usepackage{graphicx}
+\usepackage{caption}
+\title{CMPUT 481 Assignment 1}
+\author{Brock Toews}
+\date{\today}
 \begin{document}
-HI!
+\maketitle
+\begin{center}
+1284088
+\end{center}
+\thispagestyle{empty}
+\pagebreak
+\setcounter{page}{1}
+\section{Introduction}
 
+\section{Implementation}
+\section{Implications}
+\section{Charts}
+\begin{figure}
+\centering
+\includegraphics[width=300pt]{speedup.png}
+\caption{Chart of speedups}
+\end{figure}
+\begin{figure}
+\centering
+\includegraphics[width=300pt]{time.png}
+\caption{Chart of times to multiply matrices}
+\end{figure}
+\begin{figure}
+\centering
+\includegraphics[width=300pt]{segment.png}
+\caption{Chart of times to complete segments}
+\end{figure}
+\section{Source Code}
+\lstset{numbers=left, language=C}
+\subsection{Parallel Implementation}
+\lstinputlisting{main.c}
+\pagebreak
+\subsection{Sequential Implementation}
+\lstinputlisting{seq.c}
 \end{document}

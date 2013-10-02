@@ -8,6 +8,5 @@ test:
 	bash test_scr
 
 report: report.tex
-	rm report.pdf
-	latex2pdf report.tex
-	evince report.pdf
+	texi2pdf report.tex
+	open report.pdf
